@@ -27,7 +27,7 @@ import Expenses from './components/Expenses/Expenses';
 
 const App = () => {
   
-  const [expenses, setexpenses] = useState(dummy_expenses);
+  const [expenses, setExpenses] = useState(dummy_expenses);
 
   const addExpenseHandler = expense => {
     setExpenses((preExpenses) => {
@@ -44,7 +44,7 @@ const App = () => {
       <p>Ivonne Cuadros Evangelista / VAMK / BIT</p>
     </div>
   );
-  
+
 }
 
 export default App;
