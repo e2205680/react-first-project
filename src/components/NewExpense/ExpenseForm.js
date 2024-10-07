@@ -4,17 +4,14 @@ import './ExpenseForm.css';
 
 const ExpenseForm = (props) => {
 
-    const [enteredTitle, setEnteredTitle] = useState('');
-    const [enteredAmount, setEnteredAmount] = useState('');
-    const [enteredDate, setEnteredDate] = useState('');
-    // ANOTHER WAY USING OBJECT, NOW ONLY SINGLE STATE
-    // const [userInput, setUserinput] = useState({
-    //  enteredTitle: '',
-    //  enteredAmount: '',
-    //  enteredDate: '',
-    // });
-
-    const titleChangeHandler = (event) => {
+    const [enteredTitle, setEnteredTitle] = useState('');       // ANOTHER WAY USING OBJECT, NOW ONLY SINGLE STATE
+    const [enteredAmount, setEnteredAmount] = useState('');     // const [userInput, setUserinput] = useState({
+    const [enteredDate, setEnteredDate] = useState('');         //  enteredTitle: '',
+                                                                //  enteredAmount: '',
+                                                                //  enteredDate: '',
+                                                                 // });
+   
+    const titleChangeHandler = (event) => {                     
         setEnteredTitle(event.target.value);
         // ANOTHER WAY VERSION 1:
         // setUserInput({
@@ -79,10 +76,12 @@ const ExpenseForm = (props) => {
                     min='2022-01-01' 
                     max='2024-12-31'
                     value={enteredDate} 
-                    onChange={dateChangeHandler} />
+                    onChange={dateChangeHandler} 
+                    />
                 </div>
             </div>
             <div className='new-expense__actions'>
+                <button type='button' onClick={props.onCancel}>Cancel</button>
                 <button type='submit'>Add Expense</button>
             </div>
         </form>
